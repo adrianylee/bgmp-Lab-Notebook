@@ -17,8 +17,9 @@ This is the command used to test spades on a node within Talapas. This is within
 
 Command used to run the script on the node (I am logged in): format is sbatch [script]
 ```
-sbatch spadesTest.sh -- spadesTest.sh formatted based on github
+sbatch spadesTest.sh 
 ```
+-- spadesTest.sh formatted based on github
 
 To check the run:
 - cd spades.k21/ - in the directory where I ran sbatch
