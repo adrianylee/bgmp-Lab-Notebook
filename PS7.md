@@ -57,4 +57,19 @@ Reworked the bash command. Must be more specific else it finds other values (and
 ```grep ">" Homo_sapiens.GRCh38.pep.all.fa | sed -E "s/.+gene:(ENSG[0-9]+).+\..+/\1/" | sort | uniq | wc -l``` -> outputs 23879
 Which match expected values
 
+Creation of blastp.sh using the SLURM batch headers. Then get on a work node within Talapas. Downloaded and installed blast via Pixi.
+srun -A bgmp -p bgmp --time=2-00:00:00 --pty bash
+
+created a new bash script: makeblastdb.sh
+blastp command: ```/usr/bin/time -v pixi run makeblastdb -in Danio_rerio.GRCz11.pep.all.fa -dbtype prot -out Danio_Rerio -parse_seqids -title "Danio_rerio"```
+
+ran with ```sbatch blastp.sh```
+
+```squeue -u aylee``` to check run
+This creates two databases that I am now using to run blastp with the following two commands in a new bash script: ```runblastp.sh```
+```
+/usr/bin/time -v pixi run blastp -query Homo_sapiens.GRCh38.pep.all.fa -db Danio_Rerio -evalue 1e-6 -use_sw_tback -out "human_to_zebrafish_blastp" -num_threads 8
+/usr/bin/time -v pixi run blastp -query Danio_rerio.GRCz11.pep.all.fa -db Homo_sapiens -evalue 1e-6 -use_sw_tback -out "zebrafish_to_human_blastp" -num_threads 8
+```
+
 
