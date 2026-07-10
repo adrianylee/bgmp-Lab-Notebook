@@ -48,4 +48,13 @@ Confirmed script works by checking line counts (2x more than expected records)
 
 Attempted the challenge problem via bash, but didn't quite get it. Will revisit another day.
 
-### 7/9/26
+### 7/10/26
+
+Working alone
+
+Reworked the bash command. Must be more specific else it finds other values (and is incorrect)
+```grep ">" Danio_rerio.GRCz11.pep.all.fa | sed -E "s/.+gene:(ENSDARG[0-9]+).+\..+/\1/" | sort | uniq | wc -l``` -> outputs 30313
+```grep ">" Homo_sapiens.GRCh38.pep.all.fa | sed -E "s/.+gene:(ENSG[0-9]+).+\..+/\1/" | sort | uniq | wc -l``` -> outputs 23879
+Which match expected values
+
+
