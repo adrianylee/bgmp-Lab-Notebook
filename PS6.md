@@ -24,3 +24,9 @@ sbatch spadesTest.sh
 To check the run:
 - cd spades.k21/ - in the directory where I ran sbatch
 - squeue -u aylee - to check if somethings running
+
+## 7/13/26
+Working alone
+
+Wrote contigDistribution.py which uses Python regex to search for the length of each contig and the kmer coverage and stores them in two lists.
+Then based off of those values calculates and reports a number of statistics. 
