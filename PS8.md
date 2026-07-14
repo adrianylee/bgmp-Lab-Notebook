@@ -55,7 +55,7 @@ Jason came by and helped me resolve the above issue and taught me that I can use
 
 SLURM.out stored: ```/projects/bgmp/aylee/bioinfo/Bi621/PS/adrianylee-Bi621-PS8/slurm-45207541.out```
 Summary of statistics:
-The process completed in 8 minutes and 41 seconds with a maxumum memory usage of ~27.61 GB (used ```bc``` to calculate within the terminal). The job utilized 371% CPU (which is around 3.7 cores).
+The process completed in 8 minutes and 41 seconds with a maxumum memory usage of ~27.61 GB (used ```bc``` to calculate within the terminal). The job utilized 371% CPU (which is around 3.7 cores). 
 
 The STAR outputs are in the ```STAR_2.7.11b-Danio_rerio.GRCz11.dna-ens116``` which is the genome directory which will be used for the STAR alignment step.
 
@@ -86,7 +86,7 @@ Ran with sbatch
 output SLURM:
 ```slurm-45207818.out```
 Summary of statistics:
-The process completed in 674.81 seconds with a maxumum memory usage of ~15.12 GB (used ```bc``` to calculate within the terminal). The job utilized 682% CPU (which is around 6.8 cores).
+The process completed in 1 minute 39 seconds with a maxumum memory usage of ~15.12 GB (used ```bc``` to calculate within the terminal). The job utilized 682% CPU (which is around 6.8 cores).
 output file: ```zebrafishAligned.out.sam```
 
 ## Part 2: Samtools
@@ -95,7 +95,7 @@ I then ran samtools on the completed alignment (from STAR) in order to get a bam
 ```/usr/bin/time -v pixi run samtools view -b -o zebrafish.bam zebrafishAligned.out.sam```
 slurm-45208357.out
 Summary of statistics:
-The run took 74.13 seconds and used 99% of CPU. It used .05 GB RAM. 8 threads were used in initial run.
+The run took 1 minute 15 seconds and used 99% of CPU. It used .05 GB RAM. 8 threads were used in initial run.
 
 I then ran the following commands separately, in the terminal, in an interactive shell on a Talapas compute node. These commands were used to sort, extract, and create BAM file:
 ```
@@ -105,7 +105,7 @@ I then ran the following commands separately, in the terminal, in an interactive
 ```
 This sorts the bam file, indexes it so samtools can grab data very quickly with view. Sorted to only grab chromosome 1. I reran these 3 commands together in a SLURM script after I got it confirmed to work. 
 
-There are 3 SLURM outputs since usr/bin/time -v was run for all 3 commands. slurm out file: ```slurm-45259478.out```. Summary of statistics: Initial samtools sort took 98.15 seconds, using 97% of the CPU, and used 0.873 GB RAM. Indexing took 4.74 seconds, used 95% of CPU, and 0.057 GB RAM. The final view and output of only chromosome 1 alignments took 0.28 seconds, used 66% of the CPU, and used 0.059 GB RAM.
+There are 3 SLURM outputs since usr/bin/time -v was run for all 3 commands. slurm out file: ```slurm-45259478.out```. Summary of statistics: Initial samtools sort took 1 minute 40 seconds, using 97% of the CPU, and used 0.873 GB RAM. Indexing took 5 seconds, used 95% of CPU, and 0.057 GB RAM. The final view and output of only chromosome 1 alignments took 0.5 seconds, used 66% of the CPU, and used 0.059 GB RAM.
 
 Number of alignments on chr1: 
 ```grep -c "^K00337" chr1_sorted_zebrafish.sam```  
