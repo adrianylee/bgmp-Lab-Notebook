@@ -1,8 +1,8 @@
-## 7/13/26
+### 7/13/26
 
 ### Working with Imre, Diya, Rose
 
-### Part 1: STAR
+# Part 1: STAR
 The first step is to log onto a compute node within Talapas. All work is done within this compute node on Talapas.
 ```
 srun -A bgmp -p bgmp --time=2-00:00:00 --pty bash
@@ -88,7 +88,7 @@ Summary of statistics:
 The process completed in 674.81 seconds with a maxumum memory usage of ~15.12 GB (used ```bc``` to calculate within the terminal). The job utilized 682% CPU (which is around 6.8 cores).
 output file: ```zebrafishAligned.out.sam```
 
-### Part 2: Samtools
+# Part 2: Samtools
 
 I then ran samtools on the completed alignment (from STAR) in order to get a bam file:
 ```/usr/bin/time -v pixi run samtools view -b -o zebrafish.bam zebrafishAligned.out.sam```
@@ -113,7 +113,7 @@ yields the same. --> 921737 total alignments
 
 wrote a python program ```mapped.py``` that iterates through all of the original SAM (```zebrafishAligned.out.sam```) lines. It checks to make sure the current line is header line and grabs the bitwise flag (the second value when the line is split). Using this binary flag, the program checks the following two bitwise flags: (0x4 or 4) and (0x100 or 256) to check whether an alignment is mapped and if it is a primary alignment, respectively. Since I do not want to count secondary alignments, if the alignment is a primary one (this must be done since pairwise alginments have the exact same name), and increments a mapped or unmapped counter (depending on what the alignment is). These statistics are summarized at the end. 
 
-Number of MAPPED reads: 21851108 
+Number of MAPPED reads: 21851108   
 Number of UNMAPPED reads: 1645850
 
 All files uploaded, answers.md updated, everything pushed to github. All analyses and work completed in one day (7/13/26), this lab notebook was finalized on 7/14/26.
