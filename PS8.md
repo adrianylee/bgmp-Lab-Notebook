@@ -1,8 +1,9 @@
+# Lab Notebook for PS8 --> Working with STAR and Samtools
+
 ### 7/13/26
+#### Working with Imre, Diya, Rose
 
-### Working with Imre, Diya, Rose
-
-# Part 1: STAR
+## Part 1: STAR
 The first step is to log onto a compute node within Talapas. All work is done within this compute node on Talapas.
 ```
 srun -A bgmp -p bgmp --time=2-00:00:00 --pty bash
@@ -88,7 +89,7 @@ Summary of statistics:
 The process completed in 674.81 seconds with a maxumum memory usage of ~15.12 GB (used ```bc``` to calculate within the terminal). The job utilized 682% CPU (which is around 6.8 cores).
 output file: ```zebrafishAligned.out.sam```
 
-# Part 2: Samtools
+## Part 2: Samtools
 
 I then ran samtools on the completed alignment (from STAR) in order to get a bam file:
 ```/usr/bin/time -v pixi run samtools view -b -o zebrafish.bam zebrafishAligned.out.sam```
