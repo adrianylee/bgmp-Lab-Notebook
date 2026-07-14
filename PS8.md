@@ -116,4 +116,5 @@ wrote a python program ```mapped.py``` that iterates through all of the original
 Number of MAPPED reads: 21851108 
 Number of UNMAPPED reads: 1645850
 
-All files uploaded, answers.md updated, everything pushed to github.
+All files uploaded, answers.md updated, everything pushed to github. All analyses and work completed in one day (7/13/26), this lab notebook was finalized on 7/14/26.
+
