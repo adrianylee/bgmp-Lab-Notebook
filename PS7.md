@@ -33,16 +33,18 @@ For each species
      - zebrafish_proteinID_geneID_geneName.txt
 
 Updated the bioinfo.py script with a new function: oneline_fasta. This takes an input fasta, makes each record two lines total and writes the resulting fasta file out. Worked with my group on this script (Zach, Pen, Rose). The script is as follows (takes a Fasta input and an output file name):
+
+Note: initial logic was wrong if dnaLine must be nested else first line will fail
 ```
 def oneline_fasta(file, out):
-    '''docstring'''
     with open(file, "r") as fi:
         with open(out, "w") as fo:
             dnaLine = ""
             for line in fi:
                 line = line.strip()
-                if line.startswith(">") and dnaLine != "":
-                    fo.write(f"{dnaLine}\n")
+                if line.startswith(">"):
+                    if dnaLine:
+                        fo.write(f"{dnaLine}\n")
                     fo.write(f"{line}\n")
                     dnaLine = ""
                 else:
