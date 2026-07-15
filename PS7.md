@@ -1,4 +1,7 @@
 # Lab Notebook for PS7 --> Working with BLASTp
+## __SUMMARY__
+- (longestProtein.py)[longestProtein.py]
+
 
 ### 7/8/26
 #### Working with Zach today
