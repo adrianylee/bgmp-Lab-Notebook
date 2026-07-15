@@ -1,6 +1,6 @@
 # Lab Notebook for PS7 --> Working with BLASTp
 ## __SUMMARY__
-- [longestProtein.py]([longestProtein.py](https://github.com/2026-BGMP/adrianylee-Bi621-PS7/blob/main/longestProtein.py) requires fasta file, gene/protein table, and an output name
+- [longestProtein.py](https://github.com/2026-BGMP/adrianylee-Bi621-PS7/blob/main/longestProtein.py) requires fasta file, gene/protein table, and an output name
 - [makeblastdb](http://github.com/2026-BGMP/adrianylee-Bi621-PS7/blob/main/makeblastdb.sh) requires a fasta file with the longest 1 line reads
 - [runblastp.sh](https://github.com/2026-BGMP/adrianylee-Bi621-PS7/blob/main/runblastp.sh) requires the blast database created by running the above script
 
