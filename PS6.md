@@ -1,17 +1,16 @@
-# PS6 SPAdes and Raven
+# Lab Notebook for PS6 --> SPAdes and Raven
 ## Summary
 - Commands used to run SPAdes and Raven and calculate contig distribution (and other statistics) including runtime statistics for future usage.
 - Locations and names of input and output files
 - Tracked when things got done and who I worked on them with
 
-Main Files
+Main Files (input/output)
 - [contigDistribution.py](https://github.com/2026-BGMP/adrianylee-Bi621-PS6/blob/main/contigDistribution.py) - takes in an input fasta file and calculates statistics, outputting them to a table. Works with both raven and spades outputs, but must specify. Also generates a kmer distribution tsv and graph for each input file. Statistics also output as standard out (as well as within the results table).
 - [calculations.py](https://github.com/2026-BGMP/adrianylee-Bi621-PS6/blob/main/calculations.py) - takes in a contigs.fasta file and outputs base coverage and kmer coverage statistics. Outputs as standard out. 
 - Scripts used to run python scripts or bioinformatic tools: [spadesSummary.sh](https://github.com/2026-BGMP/adrianylee-Bi621-PS6/blob/main/spadesSummary.sh), [runRaven.sh](https://github.com/2026-BGMP/adrianylee-Bi621-PS6/blob/main/runRaven.sh), [populate_table.sh](https://github.com/2026-BGMP/adrianylee-Bi621-PS6/blob/main/populate_table.sh), [runCheckM2.sh](https://github.com/2026-BGMP/adrianylee-Bi621-PS6/blob/main/runCheckM2.sh)
 - [answers.md](https://github.com/2026-BGMP/adrianylee-Bi621-PS6/blob/main/answers.md) - answers to questions
 
 Software Versions
-- Talapas is $version = "0.1.0"
 - spades version = 4.3.0
 - raven-assembler = 1.8.3
 - matplotlib = 3.11.0
