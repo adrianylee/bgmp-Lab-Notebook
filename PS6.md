@@ -1,5 +1,5 @@
 # PS6 SPAdes and Raven
-Summary:
+## Summary
 - Commands used to run SPAdes and Raven and calculate contig distribution (and other statistics) including runtime statistics for future usage.
 - Locations and names of input and output files
 - Tracked when things got done and who I worked on them with
@@ -16,6 +16,8 @@ Software Versions
 - raven-assembler = 1.8.3
 - matplotlib = 3.11.0
 - checkm2 = 1.1.0
+
+---
 
 ## 7/9/2026
 ### Working with Zach
