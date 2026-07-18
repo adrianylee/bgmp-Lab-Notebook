@@ -1,9 +1,17 @@
 # Lab Notebook for PS7 --> Working with BLASTp
 ## __SUMMARY__
+- running BLAST on human and zebrafish databases from the command line
+
+Files (input/output)
 - [longestProtein.py](https://github.com/2026-BGMP/adrianylee-Bi621-PS7/blob/main/longestProtein.py) requires fasta file, gene/protein table, and an output name
 - [makeblastdb](http://github.com/2026-BGMP/adrianylee-Bi621-PS7/blob/main/makeblastdb.sh) requires a fasta file with the longest 1 line reads
 - [runblastp.sh](https://github.com/2026-BGMP/adrianylee-Bi621-PS7/blob/main/runblastp.sh) requires the blast database created by running the above script
+- [Answers.md]() - includes written answers from the PS
 
+Software Versions:
+- Ensembl 116
+- python = 3.14.*
+- blast = 2.17.0
 
 ### 7/8/26
 #### Working with Zach today
@@ -139,7 +147,7 @@ The first BLAST run (human query to zebrafish database) took 43 minutes and 29.2
 
 ### 7/15/26
 
-## Part 2 Continued
+## Part 2 Continued (these answers are also stored in ```Answers.md```)
 
 Outputs from the blast: 
 ```
@@ -160,30 +168,30 @@ Commands:
 
 human_to_zebrafish:
 ```
-    ENSG00000155657 ENSDARG00000000563      61.421  23829   8544    111     12403   35991   5733    29152   0.0     30359
-    ENSG00000155657 ENSDARG00000028213      67.302  20671   6694    36      13626   34253   5617    26265   0.0     29867
-    ENSG00000131018 ENSDARG00000063068      57.149  8812    3659    25      1       8797    1       8710    0.0     9902
-    ENSG00000127481 ENSDARG00000009549      86.119  5194    667     16      20      5183    3       5172    0.0     8997
-    ENSG00000127481 ENSDARG00000115260      86.102  5195    667     17      20      5183    3       5173    0.0     8992
-    ENSG00000005810 ENSDARG00000113355      84.418  4749    658     24      32      4772    31      4705    0.0     8062
-    ENSG00000128731 ENSDARG00000073841      82.457  4851    813     16      1       4834    1       4830    0.0     8047
-    ENSG00000143341 ENSDARG00000016936      66.347  5634    1858    14      11      5635    12      5616    0.0     7940
-    ENSG00000131018 ENSDARG00000009499      48.910  8857    4266    54      14      8797    27      8697    0.0     7929
-    ENSG00000005810 ENSDARG00000001220      83.038  4746    598     19      32      4772    31      4574    0.0     7890
+ENSP00000467141 ENSDARP00000107866      61.421  238298544     111     12403   35991   5733    29152   0.0  30359
+ENSP00000467141 ENSDARP00000099532      67.302  206716694     36      13626   34253   5617    26265   0.0  29867
+ENSP00000356224 ENSDARP00000124184      57.149  8812 3659     25      1       8797    1       8710    0.0  9902
+ENSP00000364403 ENSDARP00000128666      86.119  5194 667      16      20      5183    3       5172    0.0  8997
+ENSP00000364403 ENSDARP00000152557      86.102  5195 667      17      20      5183    3       5173    0.0  8992
+ENSP00000508153 ENSDARP00000111741      84.418  4749 658      24      32      4772    31      4705    0.0  8062
+ENSP00000261609 ENSDARP00000098322      82.457  4851 813      16      1       4834    1       4830    0.0  8047
+ENSP00000271588 ENSDARP00000005919      66.347  5634 1858     14      11      5635    12      5616    0.0  7940
+ENSP00000356224 ENSDARP00000118057      48.910  8857 4266     54      14      8797    27      8697    0.0  7929
+ENSP00000508153 ENSDARP00000028785      83.038  4746 598      19      32      4772    31      4574    0.0  7890
 ```
 
 zebrafish_to_human: 
 ```
-    ENSDARG00000000563      ENSG00000155657 63.604  22461   7785    50      6997    29152   13616   35991   0.0     30322
-    ENSDARG00000028213      ENSG00000155657 67.315  20673   6688    37      5617    26265   13626   34253   0.0     29819
-    ENSDARG00000063068      ENSG00000131018 57.149  8812    3659    25      1       8710    1       8797    0.0     9893
-    ENSDARG00000009549      ENSG00000127481 85.943  5193    670     17      7       5172    24      5183    0.0     9017
-    ENSDARG00000115260      ENSG00000127481 85.926  5194    670     18      7       5173    24      5183    0.0     9010
-    ENSDARG00000073841      ENSG00000128731 82.543  4852    807     17      1       4830    1       4834    0.0     8118
-    ENSDARG00000113355      ENSG00000005810 84.033  4785    670     26      1       4705    2       4772    0.0     8035
-    ENSDARG00000009499      ENSG00000131018 48.967  8857    4261    53      27      8697    14      8797    0.0     7990
-    ENSDARG00000016936      ENSG00000143341 66.347  5634    1858    14      12      5616    11      5635    0.0     7935
-    ENSDARG00000001220      ENSG00000005810 82.643  4782    611     21      1       4574    2       4772    0.0     7854
+ENSDARP00000107866      ENSP00000467141 63.604  22461   7785    50      6997    29152   13616   35991   0.0     30322
+ENSDARP00000099532      ENSP00000467141 67.315  20673   6688    37      5617    26265   13626   34253   0.0     29819
+ENSDARP00000124184      ENSP00000356224 57.149  8812    3659    25      1       8710    1       8797    0.0     9893
+ENSDARP00000128666      ENSP00000364403 85.943  5193    670     17      7       5172    24      5183    0.0     9017
+ENSDARP00000152557      ENSP00000364403 85.926  5194    670     18      7       5173    24      5183    0.0     9010
+ENSDARP00000098322      ENSP00000261609 82.543  4852    807     17      1       4830    1       4834    0.0     8118
+ENSDARP00000111741      ENSP00000508153 84.033  4785    670     26      1       4705    2       4772    0.0     8035
+ENSDARP00000118057      ENSP00000356224 48.967  8857    4261    53      27      8697    14      8797    0.0     7990
+ENSDARP00000005919      ENSP00000271588 66.347  5634    1858    14      12      5616    11      5635    0.0     7935
+ENSDARP00000028785      ENSP00000508153 82.643  4782    611     21      1       4574    2       4772    0.0     7854
 ```
 
 All hits with the lowest evalue (sorted by bitscore) (Command: ``````) --> HLE.txt and ZLE.txt
@@ -199,7 +207,5 @@ total lines: 27995
 
 Some notes on sort: -g is a generic number sort, need to use it for values with "e" in them. -n is a numeric sort use it on pure numbers. -r allows you to sort in reverse order (very helpful to get in the order you want). You can also use multiple -k flags to sort by multiple different categories, sequentially.
 
-This lab notebook was mostly polished on 7/15/26
-
-
+This lab notebook was mostly polished on 7/15/26. Updated 7/17/26.
 
