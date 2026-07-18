@@ -6,12 +6,16 @@ Files (input/output)
 - [longestProtein.py](https://github.com/2026-BGMP/adrianylee-Bi621-PS7/blob/main/longestProtein.py) requires fasta file, gene/protein table, and an output name
 - [makeblastdb](http://github.com/2026-BGMP/adrianylee-Bi621-PS7/blob/main/makeblastdb.sh) requires a fasta file with the longest 1 line reads
 - [runblastp.sh](https://github.com/2026-BGMP/adrianylee-Bi621-PS7/blob/main/runblastp.sh) requires the blast database created by running the above script
-- [Answers.md]() - includes written answers from the PS
+- [Answers.md](https://github.com/2026-BGMP/adrianylee-Bi621-PS7/blob/main/Answers.md) - includes written answers from the PS
 
 Software Versions:
 - Ensembl 116
 - python = 3.14.*
 - blast = 2.17.0
+
+Data Versions
+- 	Homo_sapiens.GRCh38.pep.all.fa.gz	2026-03-24 20:09	22M
+-    Danio_rerio.GRCz11.pep.all.fa.gz	2026-03-25 07:58	13M	 
 
 ### 7/8/26
 #### Working with Zach today
