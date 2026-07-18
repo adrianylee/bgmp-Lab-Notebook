@@ -1,5 +1,16 @@
 # Lab Notebook for PS8 --> Working with STAR and Samtools
+## Summary
 
+Files written (input/output):
+- [mapped.py]() - takes in an aligned .sam file that checks if the line is a header and grabs the bitwise flag. Checks to see if the read is a primary read (to avoid double counting duplicates) and if it is mapped or unmapped. Returns mapped and unmapped read counts.
+- [starDB.sh]() - SLURM script that creates a database for STAR
+- [samtoolsExtractChr1.sh]() - runs SAM and converts it to a BAM. Also includes the command line code to extract chromosome 1 reads.
+
+Software version info:
+STAR: 2.7.11b
+samtools: 1.23.1
+
+---
 ### 7/13/26
 #### Working with Imre, Diya, Rose
 
@@ -117,5 +128,5 @@ wrote a python program ```mapped.py``` that iterates through all of the original
 Number of MAPPED reads: 21851108   
 Number of UNMAPPED reads: 1645850
 
-All files uploaded, answers.md updated, everything pushed to github. All analyses and work completed in one day (7/13/26), this lab notebook was finalized on 7/14/26.
+All files uploaded, answers.md updated, everything pushed to github. All analyses and work completed in one day (7/13/26), this lab notebook was finalized on 7/14/26 and 7/17/26.
 
