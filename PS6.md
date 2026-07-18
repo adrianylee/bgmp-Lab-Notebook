@@ -1,3 +1,10 @@
+# PS6 SPAdes and Raven
+Summary:
+- Commands used to run SPAdes and Raven and calculate contig distribution (and other statistics) including runtime statistics for future usage.
+- Locations and names of input and output files
+- Tracked when things got done and who I worked on them with
+
+
 ## 7/9/2026
 ### Working with Zach
 ### Part 2 - testing a run on SPAdes
@@ -31,6 +38,8 @@ To check the run:
 ### Part 1 - Contig Length Distributions
 
 Wrote ```contigDistribution.py``` which uses Python regex to search for the length of each contig and the kmer coverage and stores them in two lists (for SPAdes formatting). It does this by parsing a target .fasta file and looking for those matches via Python regex. Using these values for these contigs, calculates the number of contigs, the total length of the genome assembly, the maximum/minimum contig length, the mean contig length, the mean kmer coverage, the weighted mean coverage (takes into account the contig length to give a weighted mean), the N50, a distribution (.tsv) of 100-bin contig length sizes. It then uses the distribution to plot a graph that is logged on both axes and the x-axis is divided by 100. This allows the actual bars of the graph to be seen (otherwise with so much data, the bars will be 0 pixels wide, and thus invisible). Included the ```fasta_one_liner``` function from ```bioinfo.py``` but realized that it's not relevant to use in this assignment. It's just commented out. The exact descriptions of each function can be found within the file itself: [contigDistribution.py](https://github.com/2026-BGMP/adrianylee-Bi621-PS6/blob/main/contigDistribution.py). 
+
+Also wrote out my test files (which includes expected output in a comment): ```Unit_test.fa``` and ```testoutput``` to use to test my ```contigDistribution.py```
 
 ## 7/16/26
 ### Working with Zach, Imre, Collin
