@@ -24,6 +24,8 @@ zcat 1294_S1_L008_R3_001.fastq.gz | head -6
 zcat 1294_S1_L008_R2_001.fastq.gz | head -6
 zcat 1294_S1_L008_R1_001.fastq.gz | head -2 | tail -1 | wc
 zcat 1294_S1_L008_R2_001.fastq.gz | head -2 | tail -1 | wc
+1452986940
+
 ```
 This initial data exploration showed which files were fastq sequence files (R1 and R4) 
 and which ones were fastq index files (R2 and R3). Also checked to verify it was indeed fastq 
