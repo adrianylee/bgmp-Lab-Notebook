@@ -41,4 +41,11 @@ format, how long each sequence was, and checked to see which files were linked t
 
 I then created a new script to calculate the per-base nucleotide distribution: ```/projects/bgmp/aylee/bioinfo/Bi622/PS/Demultiplex/Assignment-the-first/qualityScoreDistribution.py```
 
+![I1.png]([I1.png](https://github.com/adrianylee/Demultiplex/blob/master/Assignment-the-first/I1.png)) ![I2.png]([I2.png](https://github.com/adrianylee/Demultiplex/blob/master/Assignment-the-first/I2.png)) ![R1.png]([R1.png](https://github.com/adrianylee/Demultiplex/blob/master/Assignment-the-first/R1.png)) ![R2.png]([R2.png](https://github.com/adrianylee/Demultiplex/blob/master/Assignment-the-first/R1.png)) 
 
+Index (for R1) with N base calls: 3976613
+Index (for R2) with N base calls: 3328051
+Commands used:
+       ```
+       zcat /projects/bgmp/shared/2017_sequencing/1294_S1_L008_R3_001.fastq.gz | grep -A 1 "^@" | grep -v "^@" | grep -c "N"
+       zcat /projects/bgmp/shared/2017_sequencing/1294_S1_L008_R2_001.fastq.gz | grep -A 1 "^@" | grep -v "^@" | grep -c "N"
