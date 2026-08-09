@@ -110,6 +110,8 @@ These plots and initial analyses were useful for deciding on appropriate quality
 
 Written answers for this portion are stored in [Answers.md](https://github.com/adrianylee/Demultiplex/blob/master/Assignment-the-first/Answers.md).
 
+qualityScoreDistribution.py ran for 2 hours 37 minutes and 34 seconds. Used 83.5 MB RAM with 99% CPU Usage.
+
 ---
 
 ### 7/29/26
@@ -361,5 +363,9 @@ Unknown: 16.2668%
 ```
 
 The final Assignment-the-Third GitHub directory contains the code, SLURM script, Q0/Q20/Q30 Markdown result files, and all final figures. The large demultiplexed FASTQ files and `summary.tsv` outputs remain in the appropriate `/scratch/bgmp/aylee/demux/` directories rather than being pushed to GitHub.
+
+Run statistics:
+demultiplex (with test input files) took 10.69 seconds used 79.3 MB RAM, and used 17% CPU
+Q30 run took 52 minutes 35.95, used a maximum of 292.6 MB RAM and used 92% CPU
 
 Lab notebook finalized on 8/8/26.
