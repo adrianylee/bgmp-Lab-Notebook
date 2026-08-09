@@ -118,9 +118,7 @@ Written answers for this portion are stored in [Answers.md](https://github.com/a
 
 ## Assignment the First: Part 2 Demultiplexing Strategy
 
-Started developing the pseudocode and test FASTQ files for the actual demultiplexing algorithm.
-
-The basic problem is to take the following FASTQ files:
+Started developing the pseudocode and test FASTQ files for the actual demultiplexing algorithm. The basic problem is to take the following FASTQ files:
 
 ```
 R1 = read 1
@@ -129,9 +127,7 @@ R3 = index 2
 R4 = read 2
 ```
 
-and sort the R1/R4 biological read pair based on its corresponding indexes. R3 must be reverse complemented before comparing it to R2
-
-There are three possible output categories:
+and sort the R1/R4 biological read pair based on its corresponding indexes. R3 must be reverse complemented before comparing it to R2. There are three possible output categories:
 
 ```
 matched = both indexes are known and identical after reverse complementing R3
@@ -192,7 +188,7 @@ The input files are:
 /projects/bgmp/shared/2017_sequencing/1294_S1_L008_R4_001.fastq.gz
 ```
 
-The known index file is:
+The known index file is found here:
 
 ```
 /projects/bgmp/shared/2017_sequencing/indexes.txt
@@ -200,20 +196,7 @@ The known index file is:
 
 `read_indexes()` reads the final column of the index file and stores the 24 valid 8 bp index sequences.
 
-`initialize_indexes()` calls `read_indexes()` and then uses:
-
-```
-itertools.product(indexList, repeat=2)
-```
-
-to create a dictionary containing all 576 possible ordered known index pairs. All counts initially start at zero.
-
-The sequencing FASTQ files are opened using:
-
-```
-gzip.open(file, "rt")
-```
-
+`initialize_indexes()` calls `read_indexes()` and then uses itertools to create a dictionary containing all 576 possible ordered known index pairs. All counts initially start at zero.
 **All input and output files are opened before entering the main demultiplexing loop.**
 
 The main loop reads one complete FASTQ record (4 lines) from each of the four synchronized files:
@@ -240,7 +223,6 @@ index1-index2
 This pair is added to the header of both biological reads using `write_record()`.
 
 Total output files: 
-
 ```
 48 FASTQ files for properly matched indexes
 2 FASTQ files for index-hopped reads
@@ -248,7 +230,6 @@ Total output files:
 ```
 
 q30 resutls:
-
 ```
 Matched: 226715602
 Hopped: 330975
@@ -256,7 +237,6 @@ Unknown: 136200158
 ```
 
 Total:
-
 ```
 226715602 + 330975 + 136200158 = 363246735
 ```
@@ -270,36 +250,16 @@ The total number of records was correct (matches data found at the beginning)
 
 ## Assignment the Third: Debugging quality filtering
 
-Continued debugging the quality filtering.
+Continued debugging the quality filtering. Confirmed that the quality cutoff should be based on the average phred score of each complete 8 bp barcode, rather than requiring every individual nucleotide to hit quality cutoff. Changed the quality calculation to qual_score instead of phred_threshold (used it initially)
 
-Confirmed that the quality cutoff should be based on the average Phred score of each complete 8 bp barcode, rather than requiring every individual nucleotide to hit quality cutoff
-
-Changed the quality calculation to:
-
-```
-quality1 = bioinfo.qual_score(index1Read[3].strip())
-quality2 = bioinfo.qual_score(index2Read[3].strip())
-```
-
-`bioinfo.qual_score()` calculates the average Phred+33 score across the quality string for each index.
-
-I initially tested the filtering condition using:
-
-```
-quality1 < qualityScoreCutoff
-```
-
-With `< 30` I obtained:
-
+I initially tested the filtering condition using (<) but that doesn't match assignment requirements. With `< 30` I obtained:
 ```
 total num records: 363246735
 known barcode records: 304980270
 hopped barcode records: 517612
 unknown barcode records: 57748853
 ```
-which did not match with my classmates. 
-I then confirmed that the intended filtering used `<=` rather than `<`. This means an index with an average quality score exactly equal to the cutoff is also placed into the unknown/low-quality category.
-updated results:
+which did not match with my classmates. Switched to `<=` rather than `<`. This means an index with an average quality score exactly equal to the cutoff is also placed into the unknown/low-quality category. updated results:
 ```
 Matched: 303645222
 Hopped: 513040
@@ -314,7 +274,7 @@ Unknown: 59088473
 
 Continued writing/debugging and organizing demultiplex.py. Added documnetation.
 
-Added argparse arguments for:
+Added argparse arguments to make it more modular
 
 ```
 -r1 / --read1
