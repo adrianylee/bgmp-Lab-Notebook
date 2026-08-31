@@ -7,15 +7,14 @@ Main Files (input/output)
 - [main repo for ICA1](https://github.com/2026-BGMP/adrianylee-Bi623-ICA1/tree/main)
 - [sra.sh](https://github.com/2026-BGMP/adrianylee-Bi623-ICA1/blob/main/sra.sh)
 
-Software Versions
-sratoolkit.3.4.1-alma_linux64
+**Software Versions**  
+sratoolkit.3.4.1-alma_linux64  
 Electrophorus electricus: Genome assembly ASM4190279v1, GCF_041902795.1  
 Lepisosteus oculatus: Genome assembly fLepOcu1.hap2, GCF_040954835.1  
 Phycodurus eques: Genome assembly UOR_Pequ_1.1, GCF_024500275.1  
 Homo sapiens: Genome assembly GRCh38.p14, GCF_000001405.40  
 
 ---
-
 ## 8/25/2026
 ### Working alone
 ### Part 1
