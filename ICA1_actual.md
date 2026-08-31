@@ -9,10 +9,10 @@ Main Files (input/output)
 
 Software Versions
 sratoolkit.3.4.1-alma_linux64
-Electrophorus electricus: Genome assembly ASM4190279v1, GCF_041902795.1
-Lepisosteus oculatus: Genome assembly fLepOcu1.hap2, GCF_040954835.1
-Phycodurus eques: Genome assembly UOR_Pequ_1.1, GCF_024500275.1
-Homo sapiens: Genome assembly GRCh38.p14, GCF_000001405.40
+Electrophorus electricus: Genome assembly ASM4190279v1, GCF_041902795.1  
+Lepisosteus oculatus: Genome assembly fLepOcu1.hap2, GCF_040954835.1  
+Phycodurus eques: Genome assembly UOR_Pequ_1.1, GCF_024500275.1  
+Homo sapiens: Genome assembly GRCh38.p14, GCF_000001405.40  
 
 ---
 
