@@ -16,7 +16,7 @@ Homo sapiens: Genome assembly GRCh38.p14, GCF_000001405.40
 
 ---
 
-## 8/65/2026
+## 8/25/2026
 ### Working alone
 ### Part 1
 
