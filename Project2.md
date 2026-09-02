@@ -7,14 +7,14 @@ Main Files (input/output)
 
 **Software Versions**  
 PART1  
-fastqc = ">=0.12.1,<0.13"
-cutadapt = ">=5.2,<6"
-trimmomatic = ">=0.41,<0.42"
+fastqc = ">=0.12.1,<0.13"  
+cutadapt = ">=5.2,<6"  
+trimmomatic = ">=0.41,<0.42"  
 
 PART2  
-trimmomatic = ">=0.41,<0.42"
-cutadapt = ">=5.2,<6"
-matplotlib = ">=3.11.1,<4"
+trimmomatic = ">=0.41,<0.42"  
+cutadapt = ">=5.2,<6"  
+matplotlib = ">=3.11.1,<4"  
 
 PART3  
 ✔ Added star >=2.7.11b,<3  
