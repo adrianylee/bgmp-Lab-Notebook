@@ -19,7 +19,7 @@ Part 3
 - [mapped python](https://github.com/adrianylee/Project-2-Electric-organ-RNA-seq-analysis/blob/master/Project2_Part3/mapped.py)
 - [mapped slurm](https://github.com/adrianylee/Project-2-Electric-organ-RNA-seq-analysis/blob/master/Project2_Part3/mapped.sh)
 - [htseq slurm script](https://github.com/adrianylee/Project-2-Electric-organ-RNA-seq-analysis/blob/master/Project2_Part3/htseq.sh)
-- []()
+- [answers](https://github.com/adrianylee/Project-2-Electric-organ-RNA-seq-analysis/blob/master/Project2_Part3/part3answers.md)
 - 
 
 **Software Versions**  
@@ -135,6 +135,51 @@ SRR25630396 --> both around ~45 minutes, 99% CPU usage, 0.14813 GB RAM
 
 Found out that my gtf file using gffread has significantly fewer lines than an AGAT-converted gtf file. Reconverted a gft file using AGAT and reran STAR to check for differences between the runs. Also did another htseq-count run using ```-i``` Reran entire pipeline with AGAT to see if the original differences found in between the gffread converted file gtf and and gff would impact downstream analyses. **it does not**. Using gffread is a perfectly fine (and faster) method to convert a file to gtf. Mapped/Unmapped are exactly the same. Comparing outcomes.
 
+Did a full run with AGAT (since there were massive differences between the gtf and gff files converted by gffread). The only statistics that matter for this pipeline are exon and gene counts. As long as they match, gffread is faster and works better with downstream analyses. During the AGAT test, all values and genes are exactly the same without any issues. If AGAT is used, ```-i Parent``` needs to be used to track by gene rather than exon. If gffread is used, the default flag ```-i gene_id``` works perfectly fine. 
+
+As outlined by the run statistics above, htseq will only run on a single core, despite using the ```-n``` flag. Use multiple scripts to run if you want it faster. 
+
+All answers were calculated using a simple counts script taken from ICA4. These are the commands used to find the percentage (manually calculated)
+```
+
+grep -v '^__' SRR25630306_counts_stranded | awk '{sum += $2} END {print sum}'
+awk '{sum += $2} END {print sum}' SRR25630306_counts_stranded
+
+grep -v '^__' SRR25630306_counts_reverse | awk '{sum += $2} END {print sum}'
+awk '{sum += $2} END {print sum}' SRR25630306_counts_reverse
+
+grep -v '^__' SRR25630396_counts_stranded | awk '{sum += $2} END {print sum}'
+awk '{sum += $2} END {print sum}' SRR25630396_counts_stranded
+
+grep -v '^__' SRR25630396_counts_reverse | awk '{sum += $2} END {print sum}'
+awk '{sum += $2} END {print sum}' SRR25630396_counts_reverse
+```
+
+Results:
+## Stranded/Reverse
+**SRR25630306 - stranded**
+HTSeq Counts: 942195
+Total: 36896264
+Percentage: 2.553%
+
+**SRR25630306 - reverse**
+HTSeq Counts: 16185491
+Total: 36896264
+Percentage: 43.867%
+
+**SRR25630396 - stranded**
+HTSeq Counts: 3378953
+Total: 109881390
+Percentage: 3.075%
+
+**SRR25630396 - reverse**
+HTSeq Counts: 60747263
+Total: 109881390
+Percentage: 55.284%
+
+Further data can be found in the attached answers.md file (above).
+
+This lab notebook was updated 9/3/26.
 
 
 
