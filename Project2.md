@@ -23,6 +23,7 @@ PART3
 ✔ Added numpy >=2.5.2,<3  
 ✔ Added matplotlib >=3.11.1,<4  
 ✔ Added htseq >=2.1.2,<3  
+✔ Added gffread >=0.12.9,<0.13
 
 ### 9/2/26
 #### Working alone
@@ -72,4 +73,8 @@ HTTP request sent, awaiting response... 403 Forbidden
 2026-09-02 20:28:55 ERROR 403: Forbidden.
 ```
 Luckily the data is already in Talapas here: 
+`/projects/bgmp/shared/Bi623/Project2/campylomormyrus.fasta`
+`/projects/bgmp/shared/Bi623/Project2/campylomormyrus.gff`
+
+Added gffread to pixi
 
