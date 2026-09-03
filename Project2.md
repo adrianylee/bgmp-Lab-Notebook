@@ -4,11 +4,20 @@ Lab Notebook for Project2
 
 Main Files (input/output)
 
-Part 3
-- [star database SLURM]()
-- [star align SLURM]()
-- []()
-- []()
+Part 2  
+- [python plotting script for length of distributions](https://github.com/adrianylee/Project-2-Electric-organ-RNA-seq-analysis/blob/master/Project2_Part2/plot.py)
+- [SRR25630306 bar graph distribution](https://github.com/adrianylee/Project-2-Electric-organ-RNA-seq-analysis/blob/master/Project2_Part2/SRR25630306.png)
+- [SRR25630396 bar graph distribution](https://github.com/adrianylee/Project-2-Electric-organ-RNA-seq-analysis/blob/master/Project2_Part2/SRR25630396.png)
+- [fastqc script performed on post-trimmed files](https://github.com/adrianylee/Project-2-Electric-organ-RNA-seq-analysis/blob/master/Project2_Part2/fastqc.sh)
+- [cutadapt and trimmomatic run](https://github.com/adrianylee/Project-2-Electric-organ-RNA-seq-analysis/blob/master/Project2_Part2/cutandtrim.sh)
+- [answer to bonus](https://github.com/adrianylee/Project-2-Electric-organ-RNA-seq-analysis/blob/master/Project2_Part2/Project2_Part2_answers.txt)
+
+
+Part 3  
+- [star database SLURM](https://github.com/adrianylee/Project-2-Electric-organ-RNA-seq-analysis/blob/master/Project2_Part3/stardb.sh)
+- [star align SLURM](https://github.com/adrianylee/Project-2-Electric-organ-RNA-seq-analysis/blob/master/Project2_Part3/staralign.sh)
+- [mapped python](https://github.com/adrianylee/Project-2-Electric-organ-RNA-seq-analysis/blob/master/Project2_Part3/mapped.py)
+- [mapped slurm]()
 - []()
 - []()
 - 
