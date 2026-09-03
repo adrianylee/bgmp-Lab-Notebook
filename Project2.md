@@ -54,3 +54,22 @@ Got the following:
 ```
 
 Will be working within this directory within ```pixi shell``` and ```srun -A bgmp -p bgmp --time=2:00:00 --pty bash```. This has been standard practice for multiple assignments but wanted to explicitly lay it out here. 
+
+Attempted to download via the following two commands:
+```
+wget https://datadryad.org/downloads/file_stream/2058657
+--2026-09-02 20:28:08--  https://datadryad.org/downloads/file_stream/2058657
+Resolving datadryad.org (datadryad.org)... 32.186.204.172, 32.187.32.25, 54.213.72.218, ...
+Connecting to datadryad.org (datadryad.org)|32.186.204.172|:443... connected.
+HTTP request sent, awaiting response... 403 Forbidden
+2026-09-02 20:28:09 ERROR 403: Forbidden.
+
+[aylee@login2 Project2_Part3]$ wget https://datadryad.org/downloads/file_stream/2058656
+--2026-09-02 20:28:55--  https://datadryad.org/downloads/file_stream/2058656
+Resolving datadryad.org (datadryad.org)... 54.213.72.218, 100.23.147.45, 32.187.32.25, ...
+Connecting to datadryad.org (datadryad.org)|54.213.72.218|:443... connected.
+HTTP request sent, awaiting response... 403 Forbidden
+2026-09-02 20:28:55 ERROR 403: Forbidden.
+```
+Luckily the data is already in Talapas here: 
+
