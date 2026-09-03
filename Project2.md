@@ -126,8 +126,14 @@ Next, read through the ht-seq documentation and wrote another SLURM script (link
 SLURM output: ```slurm-47037187.out```  
 
 Run statistics: 
+SRR25630306 --> both around ~15 minutes, 99% CPU usage, 0.14607 GB RAM
+SRR25630396 --> both around ~45 minutes, 99% CPU usage, 0.14813 GB RAM
 
+### 9/3/26
+#### Working 
+## Part 3 (cont)
 
+Found out that my gtf file using gffread has significantly fewer lines than an AGAT-converted gtf file. Reconverted a gft file using AGAT and reran STAR to check for differences between the runs. Also did another htseq-count run using ```-i``` Reran entire pipeline with AGAT to see if the original differences found in between the gffread converted file gtf and and gff would impact downstream analyses. **it does not**. Using gffread is a perfectly fine (and faster) method to convert a file to gtf. Mapped/Unmapped are exactly the same. Comparing outcomes.
 
 
 
