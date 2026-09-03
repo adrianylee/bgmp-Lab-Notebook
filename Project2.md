@@ -121,9 +121,9 @@ Mapped: 209805206
 Unamppaed: 9957574  
 Run stats: 2 minutes 19 seconds, 99% CPU usage, 0.0601 GB RAM
 
-Next, read through the ht-seq documentation and wrote another SLURM script (linked above). Used standard run with -i. Two runs for each. First stranded, second reverse for each alignment file. Initially ran with gff file and -i gene_id. Realized that this wasn't going to work since the gff file doesn't have those identifiers. Documentation states that I can just use a valid gtf file, using that instead. 
+Next, read through the ht-seq documentation and wrote another SLURM script (linked above). Used standard run with -i. Two runs for each. First stranded, second reverse for each alignment file. Initially ran with gff file and -i gene_id. Realized that this wasn't going to work since the gff file doesn't have those identifiers. Documentation states that I can just use a valid gtf file, using that instead. Reran again since I had to specify a standard out. 
 
-SLURM output: ```slurm-47037101.out```  
+SLURM output: ```slurm-47037187.out```  
 
 Run statistics: 
 
