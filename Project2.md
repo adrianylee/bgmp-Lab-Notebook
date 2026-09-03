@@ -3,7 +3,15 @@ Lab Notebook for Project2
 - 
 
 Main Files (input/output)
+
+Part 3
+- [star database SLURM]()
+- [star align SLURM]()
 - []()
+- []()
+- []()
+- []()
+- 
 
 **Software Versions**  
 PART1  
@@ -72,9 +80,26 @@ Connecting to datadryad.org (datadryad.org)|54.213.72.218|:443... connected.
 HTTP request sent, awaiting response... 403 Forbidden
 2026-09-02 20:28:55 ERROR 403: Forbidden.
 ```
-Luckily the data is already in Talapas here: 
-`/projects/bgmp/shared/Bi623/Project2/campylomormyrus.fasta`
-`/projects/bgmp/shared/Bi623/Project2/campylomormyrus.gff`
+Luckily the data is already in Talapas here:   
+`/projects/bgmp/shared/Bi623/Project2/campylomormyrus.fasta`  
+`/projects/bgmp/shared/Bi623/Project2/campylomormyrus.gff`  
 
-Added gffread to pixi
+Added gffread to pixi  
+
+Since the data is a gff file, it must be converted to a gtf file for STAR to run properly.
+```pixi run gffread campylomormyrus.gff -T -o campylomormyrus.gtf``` in the terminal  
+
+Then used the format of PS8 to create a STAR database and align.  
+
+On initial database creation got a warning: ```!!!!! WARNING: --genomeSAindexNbases 14 is too large for the genome size=862592683, which may cause seg-fault at the mapping step. Re-run genome generation with recommended --genomeSAindexNbases 13``` which can be found in ```slurm-47036765.out```  
+
+So reran using the suggestion, new SLURM output found here: ```slurm-47036809.out```. Run statistics: 4 minutes 24 seconds, 433% CPU usage, 23.16851 GB RAM usage. Calculated using ```bc``` and ```scale=5```  
+
+Again, based on PS8 created an alignReads SLURM script for STAR. Two runs, one for each SRA that I'm responsible for. Check above for link to the script for more specific details. Output SLURM: ```slurm-47036847.out```  
+
+STAR run alignment for SRR25630306 run statistics: 8 minutes 26 seconds. 750% CPU, 9.7776 GB RAM  
+STAR run alignment for SRR25630396 run statistics: 
+
+
+
 
