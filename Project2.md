@@ -17,8 +17,8 @@ Part 3
 - [star database SLURM](https://github.com/adrianylee/Project-2-Electric-organ-RNA-seq-analysis/blob/master/Project2_Part3/stardb.sh)
 - [star align SLURM](https://github.com/adrianylee/Project-2-Electric-organ-RNA-seq-analysis/blob/master/Project2_Part3/staralign.sh)
 - [mapped python](https://github.com/adrianylee/Project-2-Electric-organ-RNA-seq-analysis/blob/master/Project2_Part3/mapped.py)
-- [mapped slurm]()
-- []()
+- [mapped slurm](https://github.com/adrianylee/Project-2-Electric-organ-RNA-seq-analysis/blob/master/Project2_Part3/mapped.sh)
+- [htseq slurm script](https://github.com/adrianylee/Project-2-Electric-organ-RNA-seq-analysis/blob/master/Project2_Part3/htseq.sh)
 - []()
 - 
 
@@ -107,7 +107,28 @@ So reran using the suggestion, new SLURM output found here: ```slurm-47036809.ou
 Again, based on PS8 created an alignReads SLURM script for STAR. Two runs, one for each SRA that I'm responsible for. Check above for link to the script for more specific details. Output SLURM: ```slurm-47036847.out```  
 
 STAR run alignment for SRR25630306 run statistics: 8 minutes 26 seconds. 750% CPU, 9.7776 GB RAM  
-STAR run alignment for SRR25630396 run statistics: 
+STAR run alignment for SRR25630396 run statistics: 20 minutes 7 seconds, 742% CPU, 9.7797 GB RAM
+
+Slightly updated the mapping script from PS8 to include a printout of current file. Ran via SLURM script. SLURM output: ```slurm-47037011.out```.  
+
+SRR25630306  
+Mapped: 68406912  
+Unmapped: 5385616  
+Run stats: 55 seconds, 91% CPU usage, 0.0601 GB RAM
+
+SRR25630396  
+Mapped: 209805206  
+Unamppaed: 9957574  
+Run stats: 2 minutes 19 seconds, 99% CPU usage, 0.0601 GB RAM
+
+Next, read through the ht-seq documentation and wrote another SLURM script (linked above). Used standard run with -i. Two runs for each. First stranded, second reverse for each alignment file. Initially ran with gff file and -i gene_id. Realized that this wasn't going to work since the gff file doesn't have those identifiers. Documentation states that I can just use a valid gtf file, using that instead. 
+
+SLURM output: ```slurm-47037101.out```  
+
+Run statistics: 
+
+
+
 
 
 
