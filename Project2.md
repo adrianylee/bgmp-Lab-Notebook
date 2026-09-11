@@ -210,11 +210,8 @@ Following the bear analysis template that we did in class, performed the DESeq a
 
 Lisa and Hope helped explain what we are trying to accomplish in Question 8. I only understand the code partially. This is what I think it does. 
 
+Question 9 was a lot more straightforward. Based on what I had already organized in a table, I reorganized with `arrange` and found the top genes for `SM` and `EO` and used plotCounts to look at those genes in more detail.
+
 This lab notebook was updated 9/11/26.
-
-
-
-
-
 
 
