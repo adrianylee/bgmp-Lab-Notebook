@@ -147,4 +147,7 @@ Began working on downloading the R packages needed for part 4. Decided on which 
 
 Figured out how to use PlotGardener with Hope's assistance. The exact commands are not as straightforward as the introductory documentation shows. Other than fiddling around with documentation and plotGardener settings there were no real issues with this part. Must include a genome annotation library (for some reason mine was not included by default). This is pretty easy to install, made sure it matched up with the assembly we were using. Also used a smaller genomic window then recommended since the cranio gene was only 1 bp. 
 
+<img width="700" height="432" alt="image" src="https://github.com/user-attachments/assets/eb1223ba-a838-465e-b2e6-9618dc21e170" />
+
+
 This notebook was last updated 9/10/26
