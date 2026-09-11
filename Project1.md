@@ -1,6 +1,6 @@
 # Lab Notebook for Project1
 ## Summary
-- 
+- Takes a group of gene and chromosomal files in order to find regions of interest. For more formal analysis of methods and results: https://docs.google.com/document/d/1Vqk9wBVdogFMSyDlL3hTAH7IYe-H6lNWsV3T5Ytawd4/edit?usp=sharing 
 
 Main Files (input/output)
 
