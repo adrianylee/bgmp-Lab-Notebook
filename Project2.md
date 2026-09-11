@@ -40,26 +40,26 @@ PART3
 ✔ Added gffread >=0.12.9,<0.13
 
 PART4/5
-> packageVersion("DESeq2")
-[1] ‘1.52.0’
-> packageVersion("apeglm")
-[1] ‘1.34.0’
-> packageVersion("edgeR")
-[1] ‘4.10.5’
-> packageVersion("dplyr")
-[1] ‘1.2.1’
-> packageVersion("tidyr")
-[1] ‘1.3.2’
-> packageVersion("stringr")
-[1] ‘1.6.0’
-> packageVersion("ggplot2")
-[1] ‘4.0.3’
-> packageVersion("pheatmap")
-[1] ‘1.0.13’
-> packageVersion("RColorBrewer")
-[1] ‘1.1.3’
-> packageVersion("ashr")
-[1] ‘2.2.63’
+> packageVersion("DESeq2")  
+[1] ‘1.52.0’  
+> packageVersion("apeglm")  
+[1] ‘1.34.0’  
+> packageVersion("edgeR")  
+[1] ‘4.10.5’  
+> packageVersion("dplyr")  
+[1] ‘1.2.1’  
+> packageVersion("tidyr")  
+[1] ‘1.3.2’  
+> packageVersion("stringr")  
+[1] ‘1.6.0’  
+> packageVersion("ggplot2")  
+[1] ‘4.0.3’  
+> packageVersion("pheatmap")  
+[1] ‘1.0.13’  
+> packageVersion("RColorBrewer")  
+[1] ‘1.1.3’  
+> packageVersion("ashr")  
+[1] ‘2.2.63’  
 
 ### 9/2/26
 #### Working alone
