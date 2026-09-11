@@ -142,7 +142,7 @@ I had some trouble with HEADERS. Must manually remove if there is a header. I ra
 
 Began working on downloading the R packages needed for part 4. Decided on which gene intersection I was looking for by sorting the muliinter output for those that had a RoCC and Cranio Variant overlap. Did this with bash sort commands. Then looked for a region that wasn't the most straightforward, for no real reason besides I thought it would be interest. Landed on the RAB51F which had 3 of the files overlapping it. 
 
-### 9/8/26
+### 9/9/26
 #### Working Alone
 
 Figured out how to use PlotGardener with Hope's assistance. The exact commands are not as straightforward as the introductory documentation shows. Other than fiddling around with documentation and plotGardener settings there were no real issues with this part. Must include a genome annotation library (for some reason mine was not included by default). This is pretty easy to install, made sure it matched up with the assembly we were using. Also used a smaller genomic window then recommended since the cranio gene was only 1 bp. 
