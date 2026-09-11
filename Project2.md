@@ -4,7 +4,7 @@
 
 Main Files (input/output)
 
-Part 2  
+Part 2
 - [python plotting script for length of distributions](https://github.com/adrianylee/Project-2-Electric-organ-RNA-seq-analysis/blob/master/Project2_Part2/plot.py)
 - [SRR25630306 bar graph distribution](https://github.com/adrianylee/Project-2-Electric-organ-RNA-seq-analysis/blob/master/Project2_Part2/SRR25630306.png)
 - [SRR25630396 bar graph distribution](https://github.com/adrianylee/Project-2-Electric-organ-RNA-seq-analysis/blob/master/Project2_Part2/SRR25630396.png)
@@ -20,19 +20,16 @@ Part 3
 - [mapped slurm](https://github.com/adrianylee/Project-2-Electric-organ-RNA-seq-analysis/blob/master/Project2_Part3/mapped.sh)
 - [htseq slurm script](https://github.com/adrianylee/Project-2-Electric-organ-RNA-seq-analysis/blob/master/Project2_Part3/htseq.sh)
 - [answers](https://github.com/adrianylee/Project-2-Electric-organ-RNA-seq-analysis/blob/master/Project2_Part3/part3answers.md)
-- 
+
+Part 4/5
+-[R markdown](https://github.com/adrianylee/Project-2-Electric-organ-RNA-seq-analysis/blob/master/Project2_parts4_5.Rmd)
 
 **Software Versions**  
-PART1  
+PART1/2
 fastqc = ">=0.12.1,<0.13"  
 cutadapt = ">=5.2,<6"  
 trimmomatic = ">=0.41,<0.42"  
-
-PART2  
-trimmomatic = ">=0.41,<0.42"  
-cutadapt = ">=5.2,<6"  
-matplotlib = ">=3.11.1,<4"  
-fastqc = ">=0.12.1,<0.13" 
+matplotlib = ">=3.11.1,<4" 
 
 PART3  
 ✔ Added star >=2.7.11b,<3  
@@ -41,6 +38,28 @@ PART3
 ✔ Added matplotlib >=3.11.1,<4  
 ✔ Added htseq >=2.1.2,<3  
 ✔ Added gffread >=0.12.9,<0.13
+
+PART4/5
+> packageVersion("DESeq2")
+[1] ‘1.52.0’
+> packageVersion("apeglm")
+[1] ‘1.34.0’
+> packageVersion("edgeR")
+[1] ‘4.10.5’
+> packageVersion("dplyr")
+[1] ‘1.2.1’
+> packageVersion("tidyr")
+[1] ‘1.3.2’
+> packageVersion("stringr")
+[1] ‘1.6.0’
+> packageVersion("ggplot2")
+[1] ‘4.0.3’
+> packageVersion("pheatmap")
+[1] ‘1.0.13’
+> packageVersion("RColorBrewer")
+[1] ‘1.1.3’
+> packageVersion("ashr")
+[1] ‘2.2.63’
 
 ### 9/2/26
 #### Working alone
@@ -130,7 +149,7 @@ SRR25630306 --> both around ~15 minutes, 99% CPU usage, 0.14607 GB RAM
 SRR25630396 --> both around ~45 minutes, 99% CPU usage, 0.14813 GB RAM
 
 ### 9/3/26
-#### Working 
+#### Working Alone
 ## Part 3 (cont)
 
 Found out that my gtf file using gffread has significantly fewer lines than an AGAT-converted gtf file. Reconverted a gft file using AGAT and reran STAR to check for differences between the runs. Also did another htseq-count run using ```-i``` Reran entire pipeline with AGAT to see if the original differences found in between the gffread converted file gtf and and gff would impact downstream analyses. **it does not**. Using gffread is a perfectly fine (and faster) method to convert a file to gtf. Mapped/Unmapped are exactly the same. Comparing outcomes.
@@ -179,7 +198,22 @@ Percentage: 55.284%
 
 Further data can be found in the attached answers.md file (above).
 
-This lab notebook was updated 9/3/26.
+### 9/10/26
+#### Working with Gabe, Zach
+## Part 4 
+
+Following the bear analysis template that we did in class, performed the DESeq analysis on the fish datasets. There was not a lot of variation from the template. The template was used for parts 1-4. MDS plots and PCA plots (and associated dendrograms) were generated using this workflow (Step 5-7 onwards): https://master.bioconductor.org/packages/release/workflows/vignettes/rnaseqGene/inst/doc/rnaseqGene.html#pre-filtering-the-dataset. I will now briefly explain what each step is trying to accomplish and any errors/problems that I encountered on the way.
+
+### 9/11/26
+#### Working with Rose, Lisa
+## Part 4 
+
+Lisa and Hope helped explain what we are trying to accomplish in Question 8. I only understand the code partially. This is what I think it does. 
+
+This lab notebook was updated 9/11/26.
+
+
+
 
 
 
