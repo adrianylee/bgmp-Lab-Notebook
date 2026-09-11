@@ -4,22 +4,37 @@
 
 Main Files (input/output)
 
-Part 1  
-- [pseudocode](https://github.com/2026-BGMP/adrianylee-Bi623-Project-1/blob/main/part1pseudocode.md)
-- [python script](https://github.com/2026-BGMP/adrianylee-Bi623-Project-1/blob/main/part1.py)
-- [bash script](https://github.com/2026-BGMP/adrianylee-Bi623-Project-1/blob/main/part1.sh)
-- [sorted Rocc output](https://github.com/2026-BGMP/adrianylee-Bi623-Project-1/blob/main/PhyloP_RoCC_output_sorted.txt)
+[Part 1](https://github.com/2026-BGMP/adrianylee-Bi623-Project-1/tree/main/Part1)
+- [pseudocode](https://github.com/2026-BGMP/adrianylee-Bi623-Project-1/blob/main/Part1/part1pseudocode.md)
+- [python script](https://github.com/2026-BGMP/adrianylee-Bi623-Project-1/blob/main/Part1/part1.py)
+- [bash script](https://github.com/2026-BGMP/adrianylee-Bi623-Project-1/blob/main/Part1/part1.sh)
+- [sorted Rocc output](https://github.com/2026-BGMP/adrianylee-Bi623-Project-1/blob/main/Part1/PhyloP_RoCC_output_sorted.txt)
 
 
 Part 2
-- 
+- [cranio variants](https://github.com/2026-BGMP/adrianylee-Bi623-Project-1/blob/main/Part2/Cranio_variants_sorted.tsv)
+- [r script](https://github.com/2026-BGMP/adrianylee-Bi623-Project-1/blob/main/Part2/Project1_Part2.Rmd)
+
+Part 3
+- [bedtools script](https://github.com/2026-BGMP/adrianylee-Bi623-Project-1/blob/main/Part2/Project1_Part2.Rmd)
+- [muliinter output](https://github.com/2026-BGMP/adrianylee-Bi623-Project-1/blob/main/Part3/filepaths.md)
+- [all filepaths](https://github.com/2026-BGMP/adrianylee-Bi623-Project-1/blob/main/Part3/multiinter.tsv)
+
+Part 4
+- [answers](https://github.com/2026-BGMP/adrianylee-Bi623-Project-1/blob/main/Part4/part4.md)
+- [plot gardener](https://github.com/2026-BGMP/adrianylee-Bi623-Project-1/blob/main/Part4/plotGardener.png)
+- [R script for plot](https://github.com/2026-BGMP/adrianylee-Bi623-Project-1/blob/main/Part4/Project1_Part4.Rmd)
 
 **Software Versions**  
-PART 1
 Python 3.14.6
+bedtools = ">=2.31.1,<3"
 
-PART 2 
-
+**R Packages***
+tidyverse
+dplyr
+plotgardener
+plyranges
+grid
 
 ### 9/3/26
 #### Working with Rose
@@ -59,8 +74,10 @@ Located the clinical data via Talapas: ```/projects/bgmp/shared/Bi623/ZoonomiaWo
 Full R code in markdown:
 library(tidyverse)
 library(dplyr)
-```
 
+This how the clinical var data was sorted.
+
+```
 ## R Markdown
 
 This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
@@ -98,11 +115,36 @@ Cranio = variants %>%
 Cranio = Cranio[order(as.numeric(Cranio$Chromosome), Cranio$Start), ] %>%
   mutate(Chromosome = paste0("chr", Chromosome))
 
-
 ```
+
+Output file: 
 ```{r}
 write_tsv(Cranio, "Cranio_variants_sorted.tsv")
 ```
+Using the concepts we've learned in R, sorted out data that was related to known Craniofacial disease variants. 
 
+### 9/8/26
+#### Working Alone
 
+Put this data back into Talapas. Figured out how to use bedtools Multiinter via the documentation. Included the narrowpeak data from Talapas. I had to make a copy of these files via sorting. Sorted and cut all of my files the exact same way to prepare them for multiinter. This is what that looked like:
+```
+cut -f1-3 $rocc | sort -k1,1V -k2,2n > RoCC_sorted.bed
+cut -f1-3 $cranio | sort -k1,1V -k2,2n > Cranio_sorted.bed #must remove header
 
+zcat "$g1" | cut -f1-3 | sort -k1,1V -k2,2n > GSM7508786_sorted.bed
+zcat "$g2" | cut -f1-3 | sort -k1,1V -k2,2n > GSM7508787_sorted.bed
+zcat "$g3" | cut -f1-3 | sort -k1,1V -k2,2n > GSM7508788_sorted.bed
+zcat "$g4" | cut -f1-3 | sort -k1,1V -k2,2n > GSM7508789_sorted.bed
+zcat "$g5" | cut -f1-3 | sort -k1,1V -k2,2n > GSM7508790_sorted.bed
+```
+
+I had some trouble with HEADERS. Must manually remove if there is a header. I ran into issues with the cranio variants having headers. Multiinter does not treat it as separate so it WILL fail if these are kept in. Besides that there were no serious issues. Made sure to include -header and -names in order to get easily readable output. Ran really quickly on one core. 6 seconds, 98% CPU, 0.05817 GB RAM. 
+
+Began working on downloading the R packages needed for part 4. Decided on which gene intersection I was looking for by sorting the muliinter output for those that had a RoCC and Cranio Variant overlap. Did this with bash sort commands. Then looked for a region that wasn't the most straightforward, for no real reason besides I thought it would be interest. Landed on the RAB51F which had 3 of the files overlapping it. 
+
+### 9/8/26
+#### Working Alone
+
+Figured out how to use PlotGardener with Hope's assistance. The exact commands are not as straightforward as the introductory documentation shows. Other than fiddling around with documentation and plotGardener settings there were no real issues with this part. Must include a genome annotation library (for some reason mine was not included by default). This is pretty easy to install, made sure it matched up with the assembly we were using. Also used a smaller genomic window then recommended since the cranio gene was only 1 bp. 
+
+This notebook was last updated 9/10/26
