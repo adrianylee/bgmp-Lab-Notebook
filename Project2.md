@@ -208,9 +208,11 @@ Following the bear analysis template that we did in class, performed the DESeq a
 #### Working with Rose, Lisa
 ## Part 4 
 
-Lisa and Hope helped explain what we are trying to accomplish in Question 8. I only understand the code partially. This is what I think it does. 
+Lisa and Hope helped explain what we are trying to accomplish in Question 8. I only understand the code partially. This is what I think it does. Load and filter data. Normalize and run DESeq2. This will allow us to examine differential expression. rlog is used (or vct for larger samples) to make it easier for comparisons. Then we plot dendrograms to identify outliers and eliminate them from the data. Using PCA, glm-PCA, and MDS we can see what factors actually differ for gene expression. 
 
-Question 9 was a lot more straightforward. Based on what I had already organized in a table, I reorganized with `arrange` and found the top genes for `SM` and `EO` and used plotCounts to look at those genes in more detail.
+Step 8 was confusing. I created a table for each of the 5 factors that we're examining. Then took the average p value and gene expression for every group. Using these averages, made a volcano plot this allows us to see overall trends. The majority of this step was done with classmates + Hope and is still confusing for me. I will spend some time over the break trying to break down exactly it is what we did.
+
+Question 9 was a lot more straightforward. Based on what I had already organized in a table, I reorganized with `arrange` and found the top genes for `SM` and `EO` and used plotCounts to look at those genes in more detail. This is the same methodology used in the bear-DESeq.
 
 This lab notebook was updated 9/11/26.
 
